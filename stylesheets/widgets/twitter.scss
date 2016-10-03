@@ -1,0 +1,135 @@
+// -----------------------------
+//  Twitter Widget
+// -----------------------------
+
+
+.widget[data-name="twitter"] {
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1050px;
+    padding-top: 40px;
+}
+
+
+.twitter {
+    overflow: visible!important;
+    height: 100%!important;
+
+    &:before,
+    &:after {
+        background-color: $color__body--background;
+        content: "";
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        height: 80%;
+        width: 45px;
+        z-index: 1;
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+    }
+
+
+    &__tweet-list {
+        float: left;
+        margin: 0 0 40px;
+        //height: 100%!important;
+    }
+
+
+    &__tweet-item {
+        background-color: $color__twitter--background;
+        float: left;
+        list-style: none;
+        margin: 0 auto;
+        min-height: 275px;
+        overflow: visible!important;
+        padding: 0 45px 35px;
+        position: relative;
+        text-align: center;
+    }
+
+
+    &__avatar {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+
+
+        &-image {
+            @include border-radius(100%);
+        }
+    }
+
+
+    &__tweet-wrap {
+        padding-top: 65px;
+    }
+
+
+    &__account-name {
+        color: $color__p--text;
+        font-family: $font__p--font-family;
+        font-size: 15px;
+        text-transform: uppercase;
+
+        &:before {
+            content: "@";
+            font-size: 10px;
+            margin-right: 4px;
+        }
+    }
+
+
+    &__tweet-content {
+        color: $color__twitter-tweet--text;
+        font-family: $font__h2--font-family;
+        font-size: $font__h2--font-size * 0.90;
+        line-height: $font__h2--line-height;
+        margin: 0 auto;
+        max-width: 680px;
+        padding: 15px 0;
+
+
+        a {
+            color: lighten($color__twitter-tweet--text, 8%);
+        }
+    }
+
+
+    // Tweet metadata and retweeted platform
+    &__tweet-meta,
+    &__retweeted-by {
+        display: none;
+        visibility: none;
+    }
+}
+
+
+.dot {
+    background-color: lighten($color__body--background, 15%);
+    text-indent: -9999px;
+    overflow: hidden;
+    position: absolute;
+    top: 25%;
+    bottom: 20%;
+    height: 55%;
+    width: 45px;
+    z-index: 2;
+
+    &:first-child {
+        left: 0;
+    }
+
+    &:last-child {
+        right: 0;
+    }
+}
+

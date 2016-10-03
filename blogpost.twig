@@ -1,0 +1,46 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="container  blog-page">
+
+
+    <!-- Header -->
+    {% include "includes/header.twig" %}
+
+
+    <!-- Feature Containers -->
+    <div role="main" id="main">
+
+            <!-- Main Zone
+            {{zone('main')|raw}}-->
+
+            {{widget('blogpost', 'singleblogpost', {})|raw}}
+
+    </div>
+
+
+    <!-- Footer -->
+    {% include "includes/footer.twig" %}
+
+
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <script>
+    $(document).ready(function(){
+        if ( $("article").hasClass("post-article--has-image") ) {
+            $(".blog-page").addClass("has-image");
+        }
+    });
+    </script>
+
+{% endblock %}
+
+

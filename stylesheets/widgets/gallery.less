@@ -1,0 +1,229 @@
+
+// ------------------------------------
+// Gallery
+// ------------------------------------
+
+
+
+// Breakpoints for gallery
+// --------------------------
+
+@gallery-2col: ~"only screen and (min-width : 650px)";
+@gallery-1col: ~"only screen and (min-width : 1px) and (max-width : 650px)";
+
+
+
+// Gallery Item
+// ------------------------------
+
+
+.gallery__gallery-item {
+    float: left;
+    height: 0; // Height is achieved using padding-bottom
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+
+
+    // 2 Columns Layout
+    @media @gallery-2col {
+        width: 50%;
+        padding-bottom: 25%;
+        margin: 0;
+
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+
+
+        &:nth-child(6n+3),
+        &:nth-child(6n+4),
+        &:nth-child(12n+3),
+        &:nth-child(12n+4) {
+            .gallery__caption:after {
+                left: 100%;
+            }
+
+
+            .gallery__image-link {
+                .flex-order(2);
+            }
+        }
+    }
+
+
+    // 1 Column Layout
+    @media @gallery-1col {
+        width: 100%;
+        height: auto;
+        padding-bottom: 50%;
+        margin: 0;
+
+
+        &:nth-child(even) .gallery__caption {
+            .flex-order(-1);
+
+
+            &:after {
+                left: 100%;
+
+            }
+        }
+    }
+
+    @media @tablet-860px {
+        padding-bottom: 50%;
+        width: 100%;
+    }
+
+    @media @mobile-650px {
+        padding-bottom: 0;
+    }
+}
+
+
+
+// Gallery Figure
+// ------------------------------
+
+.gallery__figure {
+    .flex-display;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    @media @mobile-650px {
+        display: block;
+        position: relative;
+    }
+}
+
+
+
+// Gallery Captions
+// ------------------------------
+
+
+.gallery__caption {
+    outline: 1px solid @color__gallery-caption--background;
+    margin: 0;
+    width: 50%;
+    position: relative;
+
+    @media @mobile-650px {
+        width: 100%;
+    }
+}
+
+
+
+// Gallery Captions
+// ------------------------------
+
+
+.gallery__image-link {
+    background-size: cover;
+    background-position: center;
+    display: block;
+    width: 50%;
+    .flex-grow(1);
+
+    @media @mobile-650px {
+        background-position: -9999px;
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+
+.gallery__image {
+    display: none; // Using background image instead
+
+    @media @mobile-650px {
+        display: block;
+    }
+}
+
+
+// Captions fade
+.gallery__caption-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: @color__gallery-caption--background;
+    .flex-display;
+    .flex-direction(column);
+    .flex-wrap(nowrap);
+    .justify-content(center);
+    .align-content(stretch);
+    .align-items(center);
+    .flex(1 1 50%);
+    .transition(all 0.1s ease-in-out);
+
+    @media @mobile-650px {
+        display: block;
+        padding: 25px 10px;
+        position: relative;
+    }
+}
+
+
+// Image Title
+.gallery__image-title {
+    color: @color__gallery-title--text;
+    font-family: @font__h2--font-family;
+    font-size: 20px;
+    line-height: 26px;
+    padding: 2px 14px;
+    text-align: center;
+}
+
+// Image Description
+.gallery__image-description {
+    color: lighten(@color__gallery-description--text, 8%);
+    font-size: @font__p--font-size;
+    line-height: 26px;
+    font-size: 16px;
+    padding: 5px 14px;
+    max-width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+
+    @media @tablet-860px {
+        padding: 0 14px;
+    }
+
+    @media @mobile-650px {
+        font-size: bkscale(@font__p--font-size, 0.85);
+        line-height: bkscale(@font__p--line-height, 0.7);
+    }
+
+
+    .gallery-item:hover & {
+        white-space: normal;
+    }
+}
+
+
+
+// Responsive Columns
+// ------------------------------
+
+
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+    .gallery__gallery-item {
+        padding-bottom: 50%!important;
+        width: 100%!important;
+    }
+}

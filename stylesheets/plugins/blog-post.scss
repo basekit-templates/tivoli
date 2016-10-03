@@ -1,0 +1,218 @@
+
+// -----------------------------
+//  Single Blog Post
+// -----------------------------
+
+
+.blogpost {
+
+
+    &__image-link {
+        background-size: cover;
+        background-position: center;
+        height: 550px;
+
+
+        @media #{$desktop-1024px} {
+            height: 400px;
+        }
+
+
+        @media #{$tablet-860px} {
+            height: 350px;
+        }
+    }
+
+
+    &__image {
+        display: none;
+        visibility: hidden;
+    }
+
+
+    &__post-content {
+        background-color: $color__container--background;
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+        display: inline-block;
+        margin: -60px 35px 0;
+        max-width: 800px;
+        padding: 40px 50px;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+
+
+        @media only screen and (max-width: 1180px) {
+            max-width: 680px;
+        }
+
+
+        @media #{$desktop-1024px} {
+            left: initial;
+            margin-top: -40px;
+            max-width: initial;
+            padding: 30px 40px;
+            top: initial;
+            width: initial;
+        }
+
+
+        @media #{$tablet-860px} {
+            margin-top: -30px;
+            max-width: 100%;
+        }
+
+
+        @media #{$mobile-650px} {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+
+
+    &__post-title {
+        color: $color__blogpostlist-title--text;
+        font-family: $font__h2--font-family;
+        font-size: $font__h2--font-size;
+        line-height: $font__h2--line-height;
+
+
+        @media #{$mobile-650px} {
+            font-size: $font__h2--font-size * 0.85;
+            line-height: $font__h2--line-height * 0.9;
+        }
+    }
+
+
+    &__post-footer {
+        @include align-items(center);
+        @include flex-display;
+        @include flex-wrap(wrap);
+        max-width: 250px;
+        padding: 0 20px;
+        position: absolute;
+        top: 570px;
+        left: 850px;
+        width: 100%;
+
+
+        @media only screen and (max-width: 1180px) {
+            left: 735px;
+            top: 560px;
+        }
+
+
+        @media #{$desktop-1024px} {
+            @include flex-display;
+            @include justify-content(space-between);
+            margin: 0 35px;
+            max-width: 100%;
+            padding: 20px 0;
+            position: relative;
+            left: initial;
+            top: initial;
+            width: initial;
+        }
+
+
+        @media #{$tablet-860px} {
+            padding: 15px 0 0;
+            position: relative;
+        }
+
+
+        @media #{$mobile-650px} {
+            text-align: center;
+        }
+
+
+        .timestamp {
+            color: $color__p--text;
+            font-family: $font__h2--font-family;
+            @include flex-order(3);
+            margin: 25px 0 0;
+
+
+            @media #{$desktop-1024px} {
+                margin-top: 0;
+            }
+
+
+            @media #{$mobile-650px} {
+                margin-top: 20px;
+                width: 100%;
+            }
+        }
+    }
+
+
+    &__post-attributes {
+        @include flex-display;
+        @include flex-wrap(wrap);
+        margin: 0;
+
+
+        @media #{$mobile-650px} {
+            @include justify-content(center);
+            width:100%;
+        }
+
+
+        // Add spacing between category and tags
+        div + div {
+            margin-top: 10px;
+
+
+            @media #{$desktop-1024px} {
+                margin-top: 0;
+            }
+        }
+
+
+        .post-category,
+        .post-tags {
+            width: 100%;
+
+
+            @media #{$desktop-1024px} {
+                @include flex-display;
+                @include align-items(center);
+                width: initial;
+            }
+        }
+
+
+        .post-category {
+            @media #{$desktop-1024px} {
+                margin-right: 20px;
+            }
+        }
+
+
+        // Title styles
+        .category-title,
+        .tags-title {
+            color: white;
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+
+            @media #{$desktop-1024px} {
+                margin-right: 10px;
+            }
+        }
+
+
+        .category-text,
+        .tag-text {
+            color: $color__p--text;
+            font-family: $font__h2--font-family;
+        }
+    }
+}
+

@@ -1,0 +1,246 @@
+
+// --------------------------------
+//  Slideshow Widget (Main zone)
+// --------------------------------
+
+
+
+// Styling for slideshow widget in main zone
+.bk-zone .responsiveslideshow {
+    &__figure {
+        display: block;
+        min-height: 650px;
+        height: auto;
+
+        @media only screen and (max-height: 600px) {
+            min-height: 350px;
+        }
+
+        @media @mobile-650px {
+            min-height: 400px;
+        }
+    }
+
+
+    // Image caption
+    &__caption {
+        background-color: rgba(0,0,0,0.5);
+        display: inline-block;
+        margin: 0;
+        max-width: 55%;
+        padding: 12px 25px;
+        position: absolute;
+        bottom: 0;
+        text-align: left;
+        width: auto;
+
+        @media @tablet-860px {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+
+    // Slideshow image title
+    &__image-title {
+        color: @color__slideshow-title--text;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: @font__feature-headline--font-family;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+
+
+    // Slideshow image description
+    &__image-description {
+        color: @color__slideshow-description--text;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+    // Slideshow pagination
+    &__slide-pagination {
+        .flex-display;
+        .flex-wrap(wrap);
+        .align-items(center);
+        .justify-content(center);
+        bottom: 0;
+        top: 0;
+        right: 20px;
+        width: 25px;
+
+        @media @tablet-860px {
+            bottom: 15px;
+        }
+
+        @media only screen and (max-height: 600px) {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+
+    // Slideshow pagination list item
+    &__pagination-item {
+        display: block;
+
+        &.selected .button {
+            background-color: rgba(0,0,0, 0.5);
+            border-color: rgba(0,0,0, 0.15);
+        }
+    }
+
+
+    // Pagination button styles
+    &__button.button {
+        background-color: transparent;
+        border: 2px solid rgba(0,0,0, 0.5);
+        .border-radius(100px);
+        overflow: hidden;
+        padding: 0;
+        text-indent: -9999px;
+        height: 13px;
+        width: 13px;
+    }
+
+
+    // Positioning of slideshow nav and pagination
+    &__slide-navigation,
+    &__slide-pagination {
+        position: absolute;
+        margin: 0;
+    }
+
+
+    // Slideshow pagination button styling
+    &__button {
+        .border-radius(100px);
+        margin-bottom: 4px;
+        overflow: hidden;
+        text-indent: -99999px;
+        width: 100%;
+    }
+
+
+    // Slideshow navigation styling
+    &__slide-navigation {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 55px;
+        z-index: 10001;
+
+        @media @tablet-860px {
+            .flex-display;
+            .justify-content(space-between);
+            bottom: 20px;
+            left: 25px;
+            right: 25px;
+            height: 50px;
+            max-width: 100%;
+            width: auto;
+        }
+
+        @media @mobile-650px {
+            left: 20px;
+            right: 20px;
+        }
+    }
+
+    // Navigation buttons
+    &__previous-button,
+    &__next-button,
+    &__pause-toggle {
+        background-color: rgba(0,0,0, 0.5);
+        color: white;
+        display: inline-block;
+        padding: 0 10px;
+        position: relative;
+        line-height: 55px;
+        height: 55px;
+        width: 55px;
+
+        @media @tablet-860px {
+            .flex-grow(1);
+            height: 50px;
+        }
+
+
+        &:after {
+            top: 22px;
+
+            @media @tablet-860px {
+                border-color: white;
+            }
+        }
+    }
+
+    // Previous slide button
+    &__previous-button {
+        margin-right: -4px;
+
+        @media @tablet-860px {
+            margin-right: 0;
+        }
+
+
+        // Icon positioning
+        &:after {
+            left: 28px;
+
+            @media @tablet-860px {
+                left: 8px;
+                right: 0;
+                top: 20px;
+            }
+        }
+    }
+
+    // Next slide button
+    &__next-button {
+        margin-left: -4px;
+
+        @media @tablet-860px {
+            margin-left: 0;
+        }
+
+        // Icon positioning
+        &:after {
+            right: 28px;
+
+            @media @tablet-860px {
+                left: 0;
+                right: 8px;
+                top: 20px;
+            }
+        }
+    }
+
+    // Play icon
+    &__pause-toggle:before {
+        border-left: 14px solid white;
+        left: 4px;
+        top: 18px;
+    }
+
+    // Pause icon
+    &__pause-toggle.pause:before {
+        left: 0;
+        top: 20px;
+
+        @media @tablet-860px {
+            border-color: white;
+            top: 18px;
+        }
+    }
+
+    // Navigation control text
+    &__control-text {
+        display: none;
+        visibility: hidden;
+    }
+}

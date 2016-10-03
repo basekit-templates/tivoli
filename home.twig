@@ -1,0 +1,104 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="container  home">
+
+
+    <!-- Header -->
+    {% include "includes/header.twig" %}
+
+
+    <div class="home-gallery">
+
+        {{widget('content', 'home-heading', {
+            content: '<h1>We work with you behind the scenes to craft words that matter.</h1>'
+        })|raw}}
+
+        <!-- Gallery Widget -->
+        {{widget('gallery', 'home-gallery', {
+            'showTitle': true,
+            'showDescription': true,
+            'images':[
+                {
+                    'url':'http://placehold.it/350x300',
+                    'title':'First image title',
+                    'description': 'First image description'
+                },
+                {
+                    'url':'http://placehold.it/350x400',
+                    'title':'Second image title',
+                    'description': 'Second image description'
+                },
+                {
+                    'url':'http://placehold.it/650x300',
+                    'title':'Third image title',
+                    'description': 'Third image description'
+                },
+                {
+                    'url':'http://placehold.it/350x300',
+                    'title':'Fourth image title',
+                    'description': 'Fourth image description'
+                },
+                {
+                    'url':'http://placehold.it/350x400',
+                    'title':'Fifth image title',
+                    'description': 'Fifth image description'
+                },
+                {
+                    'url':'http://placehold.it/650x300',
+                    'title':'Sixth image title',
+                    'description': 'Sixth image description'
+                },
+                {
+                    'url':'http://placehold.it/350x400',
+                    'title':'Seventh image title',
+                    'description': 'Seventh image description'
+                },
+                {
+                    'url':'http://placehold.it/650x300',
+                    'title':'Eighth image title',
+                    'description': 'Eighth image description'
+                }
+            ]
+        })|raw}}
+
+    </div>
+
+
+    <div role="main" id="main">
+
+        <!-- Main Zone -->
+        {{zone('main')|raw}}
+
+    </div>
+
+
+    <!-- Footer -->
+    {% include "includes/footer.twig" %}
+
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <!--Scripts-->
+    <script src="{{ asset('scripts/imagesloaded.js')}}"></script>
+    <script src="{{ asset('scripts/masonry.min.js')}}"></script>
+
+
+    <!-- Initialize Masonry Gallery-->
+    <script>
+        var container = document.querySelector('.gallery-list');
+        imagesLoaded( container, function() {
+            var msnry = new Masonry( container, {
+                itemSelector: '.gallery-item'
+            });
+        });
+    </script>
+
+{% endblock %}

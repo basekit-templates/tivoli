@@ -1,0 +1,152 @@
+
+// -----------------------------
+//  Blog Post List
+// -----------------------------
+
+
+.blogpostlist {
+
+
+    &__post-article {
+        margin-bottom: 65px;
+        position: relative;
+
+        @media #{$tablet-860px} {
+            margin-bottom: 45px;
+        }
+    }
+
+
+    &__post-content {
+        background-color: $color__container--background;
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        display: inline-block;
+        margin: -150px 35px 0;
+        max-width: 680px;
+        padding: 35px 50px;
+        position: relative;
+        z-index: 2;
+
+
+        @media #{$desktop-1024px} {
+            margin-top: -80px;
+            padding: 30px 40px;
+            max-width: 580px;
+        }
+
+
+        @media #{$tablet-860px} {
+            margin-top: -40px;
+            max-width: 100%;
+        }
+
+
+        @media #{$tablet-860px} {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+
+
+    &__image-link {
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+
+
+        @media #{$desktop-1024px} {
+            height: 400px;
+        }
+
+
+        @media #{$tablet-860px} {
+            height: 350px;
+        }
+    }
+
+
+    &__image {
+        display: none;
+        visibility: hidden;
+    }
+
+
+    &__title-link {
+        color: $color__blogpostlist-title--text;
+        font-family: $font__h2--font-family;
+        font-size: $font__h2--font-size;
+        line-height: $font__h2--line-height;
+
+
+        @media #{$mobile-650px} {
+            font-size: $font__h2--font-size * 0.85;
+            line-height: $font__h2--line-height * 0.9;
+        }
+    }
+
+
+    &__read-more {
+        color: $color__button--background;
+    }
+
+
+    &__pagination-list {
+        @include flex-display;
+        @include flex-wrap(nowrap);
+        @include justify-content(space-between);
+        margin-top: 65px;
+
+
+        @media #{$mobile-650px} {
+            margin: 35px 0 15px;
+        }
+    }
+
+
+    &__post-footer {
+        position: absolute;
+        top: 520px;
+        right: 0;
+
+
+        @media #{$desktop-1024px} {
+            top: 420px;
+        }
+
+
+        @media #{$tablet-860px} {
+            padding: 15px 0 0 35px;
+            position: relative;
+            top: initial;
+        }
+
+
+        @media #{$mobile-650px} {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+        }
+    }
+}
+
+
+// Styles for responsive columns
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+
+    .blogpostlist__post-items {
+        display: block;
+    }
+
+    .blogpostlist__post-article {
+        max-width: 100%;
+    }
+}

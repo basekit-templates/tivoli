@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="container  blog-list">
+
+
+    <!-- Header -->
+    {% include "includes/header.twig" %}
+
+
+    <!-- Feature Containers -->
+    <div role="main" id="main">
+
+            <!-- Main Zone
+            {{zone('main')|raw}}-->
+
+            {{widget('blogpostlist', 'allblogposts', {})|raw}}
+
+    </div>
+
+
+    <!-- Footer -->
+    {% include "includes/footer.twig" %}
+
+
+</div>
+
+
+{% endblock %}

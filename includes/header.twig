@@ -1,0 +1,15 @@
+<!-- Company Name and Logo -->
+ <header class="template-header">
+
+    <div class="template-header--brand">
+        <!--{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png'), "showTplWidget":"0"})|raw}}-->
+        {{widget('companyname', 'header-companyname', {"business": "profile"})|raw}}
+    </div>
+
+    <!-- Navigation Icon -->
+    {% include "includes/nav-icon.twig" %}
+
+    <!-- Navigation -->
+    {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
+
+</header>

@@ -1,0 +1,183 @@
+
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+//  SASS Includes
+//    - BK SASS Framework
+//    - Base Styles
+//    - Widgets
+//    - Plugins
+//    - Pages
+
+
+//  Theme Styles
+//    - Header
+//    - Main / Responsive Columns
+//    - Footer
+
+
+
+
+// -----------------------------
+//  SASS Includes
+// -----------------------------
+
+
+
+// BK SASS Framework
+// ------------------
+
+@import "stylesheets/base/bk-sass-framework-v8.scss";                              // V8 Framework
+
+
+// Base Styles
+// --------------
+
+@import "stylesheets/base/mixins.scss";                                        // Mixins
+@import "stylesheets/base/typography.scss";                                    // Typography
+
+
+
+// Widgets Styles
+// --------------
+
+// @import "@{templateLocal}/stylesheets/widgets/brand.less";                  // Logo & Companyname
+@import "stylesheets/widgets/navigation.scss";             // Navigation
+@import "stylesheets/widgets/navigation-icon.scss";                            // Navigation Icon
+// @import "@{templateLocal}/stylesheets/widgets/gallery.less";                // Gallery
+//@import "@{templateLocal}/stylesheets/widgets/forms.less";                  // Forms
+@import "stylesheets/widgets/social.scss";                 // Social
+@import "stylesheets/widgets/twitter.scss";                // Twitter
+@import "stylesheets/widgets/yelp.scss";                   // Yelp
+// @import "@{templateLocal}/stylesheets/widgets/divider.less";                // Divider
+@import "stylesheets/widgets/forms.scss";                                // Form Elements
+// @import "@{templateLocal}/stylesheets/widgets/advanced-contact-form.less";           // Contact Form
+// @import "@{templateLocal}/stylesheets/widgets/image.less";                  // Image
+// @import "@{templateLocal}/stylesheets/widgets/slideshow.less";              // Slideshow
+// @import "@{templateLocal}/stylesheets/widgets/widgets.less";                // Other Widgets
+
+
+
+// Plugin Styles
+// ----------------------
+
+@import "stylesheets/plugins/blog-post-list.scss";         // Blog Post List
+@import "stylesheets/plugins/blog-post.scss";              // Blog Post
+// @import "@{templateLocal}/stylesheets/plugins/ecom-product.less";           // Ecom Product
+@import "stylesheets/plugins/ecom-product-list.scss";      // Ecom Product List
+// @import "@{templateLocal}/stylesheets/plugins/ecom-basket.less";            // Ecom Basket
+
+
+
+// Page Specific Styles
+// ----------------------
+
+@import "stylesheets/pages/homepage-gallery.scss";                             // Homepage Gallery
+
+
+
+
+// -----------------------------
+//  Theme Styles
+// -----------------------------
+
+
+
+// Global
+// ---------------
+
+body {
+    background-color: $color__body--background;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: hidden;
+    padding: 0 40px;
+
+    @media #{$mobile-650px} {
+        padding: 0 30px;
+    }
+}
+
+
+
+// Header
+// ---------------
+
+.template-header {
+    background-color: $color__header--background;
+    @include flex-display();
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    margin: 0;
+    padding: 45px 0;
+    position: relative;
+
+
+    // Flex position logo / company name
+    &--brand {
+        @include flex-display();
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        @include flex(1 0 auto);
+        padding: 0 10px 0 0;
+        text-align: center;
+        z-index: 999;
+
+
+        @media #{$tablet-860px} {
+            max-width: 100%;
+        }
+
+
+        // Add spacing betweent logo and company name
+        .widget:first-child {
+            margin-bottom: 6px;
+        }
+
+
+        // Stop logo becoming to large
+        .logo-image {
+            max-width: 200px;
+
+
+            @media #{$mobile-650px} {
+                max-width: 150px;
+            }
+        }
+    }
+}
+
+
+.home-gallery {
+    padding-top: 250px;
+
+
+    @media #{$tablet-860px} {
+        padding-top: 125px;
+    }
+
+
+    @media #{$mobile-650px} {
+        padding-top: 65px;
+    }
+}
+
+
+
+// Footer
+// ---------------
+
+.template-footer {
+    padding: 50px 0 0;
+
+
+    @media #{$mobile-650px} {
+        padding-top: 25px;
+        text-align: center;
+    }
+}
+

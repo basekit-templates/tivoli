@@ -1,0 +1,78 @@
+
+// ------------------------------------
+//  Image Widget
+// ------------------------------------
+
+
+.imagewidget {
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+
+
+    // Image Figure
+    &__figure {
+        display: inline;
+        margin: 0;
+        position: relative;
+        text-align: center;
+    }
+
+
+    // Image link
+    &__image-link {
+        display: inline;
+        overflow: visible;
+    }
+
+
+    // Image title and description
+    &__caption {
+        background-color: @color__image-caption--background;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 15px 25px;
+        text-align: left;
+
+        @media @tablet-860px {
+            padding: 10px 25px 15px;
+        }
+
+        @media @mobile-650px {
+            padding: 5px 20px 5px;
+        }
+    }
+
+
+    // If image is aligned right move caption box to match
+    &.widget-align-right .imagewidget__caption {
+        left: initial;
+        right: 0;
+    }
+
+
+    // Stop text being center aligned when widget alignment is changed
+    &.widget-align-center .imagewidget__caption {
+        text-align: left;
+    }
+
+
+    // Image title styles
+    &__image-title {
+        color: @color__image-title--text;
+        font-weight: 500;
+        font-family: @font__feature-headline--font-family;
+        line-height: 24px;
+        margin-bottom: 3px;
+    }
+
+
+    // Image description styles
+    &__image-description {
+        color: @color__image-description--text;
+        font-size: 14px;
+        line-height: 21px;
+    }
+}

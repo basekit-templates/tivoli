@@ -1,0 +1,76 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="container  ecom-list">
+
+
+    <!-- Header -->
+    {% include "includes/header.twig" %}
+
+
+    <div role="main" id="main">
+
+        <!-- Main Zone
+        {{zone('main')|raw}}-->
+        {{widget('ecomproductslist', 'productlist', {})|raw}}
+
+        <div class="toggle-filter">
+           <div class="toggle-items">
+                <div class="toggle-item"></div>
+                <div class="toggle-item"></div>
+                <div class="toggle-item"></div>
+           </div>
+           <div class="toggle-active"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    {% include "includes/footer.twig" %}
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+        $(document).on("click", ".toggle-filter", function() {
+            $( "body" ).toggleClass( "filters-open" );
+        });
+
+
+        $(function() {
+
+        $(".toggle-filter").click(function() {
+
+            $(this).prepend('<span class="animate"></span>')
+                $(".animate").animate({
+                    width: 80,
+                    height: 80,
+                    opacity: 0
+                 },
+                 500,
+                 function() {
+                    $(this).remove();
+                 });
+
+                $(this).toggleClass('active');
+           })
+        });
+
+
+        $(document).ready(function(){
+            if ( $(".button").hasClass("button--clear")) {
+                $("body").addClass("clear-filters");
+            }
+        });
+    </script>
+{% endblock %}
+

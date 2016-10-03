@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="ecom-page">
+    <div class="template-feature">
+
+
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+
+            <!-- Main Zone -->
+            {{zone('main')|raw}}
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
+
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <script>
+        if($(".ecomproduct__product-gallery").length == 0)
+        {
+           $("body").addClass("product-one-image");
+        }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+
+// ---------------------------------
+// Advanced Contact Form Overlay
+// ---------------------------------
+
+
+// If basket is open apply styles
+.form-open .template-header {
+    position: fixed;
+
+    &:before {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+.template-header {
+
+
+    [data-widget-type="advancedcontactform"],
+    [data-name="advancedcontactform"] {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        .transition(all 0.25s ease-in-out);
+        .flex-display;
+        .flex-direction(column);
+        .justify-content(center);
+        .align-content(center);
+        .align-items(center);
+        margin: 120px 40px 40px 30px;
+        .transform(translate(0px, -30%));
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2;
+
+
+        @media @mobile-650px {
+            .justify-content(flex-end);
+        }
+
+
+        .form-open & {
+            .transform(translate(0, 0));
+            opacity: 1;
+            overflow-y: scroll;
+            visibility: visible;
+        }
+    }
+
+
+    .advancedcontactform {
+        margin: auto 0;
+        max-width: 650px;
+        width: 100%;
+
+
+        &__form {
+            @media @mobile-650px {
+                margin-bottom: 0;
+                padding: 30px 0;
+            }
+        }
+
+
+        &__legend {
+            color: white;
+        }
+
+
+        &__button {
+            background-color: #e7a022;
+            color: white;
+        }
+    }
+}
+
