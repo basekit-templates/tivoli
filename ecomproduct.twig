@@ -3,23 +3,25 @@
 
 
 <!-- Navigation Container -->
-<div class="ecom-page">
-    <div class="template-feature">
+<div class="container  ecom-page">
 
 
-            <!-- Header -->
-            {% include "includes/header.twig" %}
+        <!-- Header -->
+        {% include "includes/header.twig" %}
 
+
+        <div role="main" id="main">
 
             <!-- Main Zone -->
             {{zone('main')|raw}}
 
-
-            <!-- Footer -->
-            {% include "includes/footer.twig" %}
+        </div>
 
 
-    </div>
+        <!-- Footer -->
+        {% include "includes/footer.twig" %}
+
+
 </div>
 
 
@@ -33,6 +35,34 @@
         {
            $("body").addClass("product-one-image");
         }
+
+
+        $('.product-gallery').each(function(){
+        var max = 3
+            if ($(this).find("li").length > max) {
+                $(this)
+                  .find('li:gt('+max+')')
+                  .hide()
+                  .end()
+                  .append(
+                    $('<a class="ecom-view-more" id="ecomscroll" href="#"></a>').click( function(){
+                      $(this).siblings(':hidden').show().end();
+                    })
+                );
+            }
+        });
+
+
+        $('#ecomscroll').click(function(e) {
+        e.preventDefault();
+        var id = e.target.id;
+            if(id == 'ecomscroll'){
+                $('ul.product-gallery li:first').appendTo('ul.product-gallery');
+            }else{
+                $('ul.product-gallery li:last').prependTo('ul.product-gallery');
+            }
+        });
     </script>
 
 {% endblock %}
+

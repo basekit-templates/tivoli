@@ -133,6 +133,9 @@
             font-family: $font__h2--font-family;
             @include flex-order(3);
             margin: 25px 0 0;
+            position: absolute;
+            right: 0;
+            top: -80px;
 
 
             @media #{$desktop-1024px} {
@@ -194,7 +197,7 @@
         // Title styles
         .category-title,
         .tags-title {
-            color: white;
+            color: lighten($color__body--background, 100%);
             display: block;
             font-size: 13px;
             font-weight: 600;
@@ -212,6 +215,35 @@
         .tag-text {
             color: $color__p--text;
             font-family: $font__h2--font-family;
+        }
+    }
+
+
+    &__sharing-links {
+        padding: 0;
+        position: relative;
+
+
+        .network-item {
+            margin: 10px 16px 0 0;
+        }
+
+
+        button {
+            background-color: transparent;
+            color: lighten($color__body--background, 100%);
+            font-size: 16px;
+            min-width: initial;
+            padding: 0;
+            overflow: hidden;
+            height: 25px;
+            width: 15px;
+
+
+            &:hover {
+                background-color: transparent;
+                color: darken($color__button--background, 0.25);
+            }
         }
     }
 }

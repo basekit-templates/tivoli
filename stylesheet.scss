@@ -53,8 +53,8 @@
 // @import "@{templateLocal}/stylesheets/widgets/divider.less";                // Divider
 @import "stylesheets/widgets/forms.scss";                                // Form Elements
 // @import "@{templateLocal}/stylesheets/widgets/advanced-contact-form.less";           // Contact Form
-// @import "@{templateLocal}/stylesheets/widgets/image.less";                  // Image
-// @import "@{templateLocal}/stylesheets/widgets/slideshow.less";              // Slideshow
+@import "stylesheets/widgets/image.scss";                  // Image
+@import "stylesheets/widgets/slideshow.scss";              // Slideshow
 // @import "@{templateLocal}/stylesheets/widgets/widgets.less";                // Other Widgets
 
 
@@ -64,7 +64,7 @@
 
 @import "stylesheets/plugins/blog-post-list.scss";         // Blog Post List
 @import "stylesheets/plugins/blog-post.scss";              // Blog Post
-// @import "@{templateLocal}/stylesheets/plugins/ecom-product.less";           // Ecom Product
+@import "stylesheets/plugins/ecom-product.scss";           // Ecom Product
 @import "stylesheets/plugins/ecom-product-list.scss";      // Ecom Product List
 // @import "@{templateLocal}/stylesheets/plugins/ecom-basket.less";            // Ecom Basket
 
@@ -135,7 +135,7 @@ body {
 
         // Add spacing betweent logo and company name
         .widget:first-child {
-            margin-bottom: 6px;
+            margin-right: 6px;
         }
 
 

@@ -62,10 +62,10 @@ select {
 
     &:focus,
     &:hover {
-        background-color: transparent;
-        border-color: darken(gainsboro, 15%);
-        box-shadow: inset 0 0px 10px rgba(240,240,240, 0.5);
-        @include transition(.3s all ease-in);
+        background-color: darken($color__form--background, 5%);
+        color: darken($color__p--text, 10%);
+        @include transition(background ease 0.35s);
+        -webkit-appearance: none;
     }
 }
 

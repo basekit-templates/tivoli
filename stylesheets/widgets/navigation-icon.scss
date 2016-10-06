@@ -6,7 +6,8 @@
 
 .navigation-open .navigation-icon--container {
     position: fixed;
-    left: 35px;
+    right: 35px;
+
 
     // Icon colour when navigation is open
     label:before,
@@ -22,7 +23,7 @@
 
 .navigation-icon--container {
     position: relative;
-    z-index: 9999;
+    z-index: 10001;
 
 
     input {
@@ -51,6 +52,7 @@
         height: 2px;
         @include border-radius(4px);
         background: #fafafa;
+
 
         @media #{$mobile-650px} {
             width: 30px;
@@ -177,7 +179,6 @@
 }
 
 
-
 @-webkit-keyframes animationOne {
     0%, 50% { -webkit-transform: rotate(0deg); }
     75% { -webkit-transform: rotate(360deg); }
@@ -189,7 +190,6 @@
     75% { transform: rotate(360deg); }
     100% { transform: rotate(315deg); }
 }
-
 
 
 @-webkit-keyframes animationTwoReverse {
@@ -205,7 +205,6 @@
 }
 
 
-
 @-webkit-keyframes animationTwo {
     0%, 50% { -webkit-transform: rotate(0deg); }
     75% { -webkit-transform: rotate(450deg); }
@@ -219,18 +218,17 @@
 }
 
 
-
 @-webkit-keyframes animationBurgerTopReverse {
     0%, 50% { -webkit-transform: translateY(12px); opacity: 0; }
     51% { -webkit-transform: translateY(12px); opacity: 1; }
     100% { -webkit-transform: translateY(0px); opacity: 1; }
 }
+
 @keyframes animationBurgerTopReverse {
     0%, 50% { transform: translateY(12px); opacity: 0; }
     51% { transform: translateY(12px); opacity: 1; }
     100% { transform: translateY(0px); opacity: 1; }
 }
-
 
 
 @-webkit-keyframes animationBurgerTop {

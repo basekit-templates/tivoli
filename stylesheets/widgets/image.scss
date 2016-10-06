@@ -7,7 +7,6 @@
 .imagewidget {
     font-size: 0;
     line-height: 0;
-    text-align: center;
 
 
     // Image Figure
@@ -15,7 +14,6 @@
         display: inline;
         margin: 0;
         position: relative;
-        text-align: center;
     }
 
 
@@ -26,23 +24,16 @@
     }
 
 
+    &__image {
+        -webkit-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.05);
+        -moz-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.05);
+        box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.05);
+    }
+
+
     // Image title and description
     &__caption {
-        background-color: @color__image-caption--background;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        margin: 0;
-        padding: 15px 25px;
-        text-align: left;
-
-        @media @tablet-860px {
-            padding: 10px 25px 15px;
-        }
-
-        @media @mobile-650px {
-            padding: 5px 20px 5px;
-        }
+        padding: 20px 0;
     }
 
 
@@ -61,18 +52,20 @@
 
     // Image title styles
     &__image-title {
-        color: @color__image-title--text;
+        color: $color__image-title--text;
+        font-family: $font__feature-headline--font-family;
+        font-size: 19px;
         font-weight: 500;
-        font-family: @font__feature-headline--font-family;
-        line-height: 24px;
-        margin-bottom: 3px;
+        line-height: 26px;
+        margin-bottom: 8px;
     }
 
 
     // Image description styles
     &__image-description {
-        color: @color__image-description--text;
-        font-size: 14px;
+        color: $color__image-description--text;
+        font-size: 16px;
         line-height: 21px;
     }
 }
+

@@ -11,24 +11,10 @@ $(document).on("click", ".navigation-icon--container input", function() {
 });
 
 
-// Ecom basket toggle
-$(document).on("click", ".template-header--contact", function() {
-    $( "body" ).toggleClass( "form-open" );
-});
-
-
-// If slide navigation / pagination is visible add class to change feature positioning
+// If slide navigation is visible hide the pagination
 $(document).ready(function(){
-    if ( $(".template-feature nav").hasClass("responsiveslideshow__slide-navigation") || $(".template-feature nav").hasClass("responsiveslideshow__slide-pagination") ) {
-        $(".template-feature").addClass("has-slide-navigation");
-    }
-});
-
-
-// If slide navigation and pagination are visible hide the pagination
-$(document).ready(function(){
-    if ( $(".template-feature nav").hasClass("responsiveslideshow__slide-pagination") && $(".template-feature nav").hasClass("responsiveslideshow__slide-navigation") ) {
-        $(".template-feature").addClass("hide-slide-pagination");
+    if ( $("nav").hasClass("responsiveslideshow__slide-pagination")) {
+         $("body").addClass("has-slide-pagination");
     }
 });
 
@@ -64,7 +50,7 @@ $(document).ready(function(){
             complete: function() {},  //  A function that gets called after every slide animation
             keys: true,               //  Enable keyboard (left, right) arrow shortcuts
             dots: true,               //  Display dot navigation
-            fluid: true              //  Support responsive design. May break non-responsive designs
+            fluid: true               //  Support responsive design. May break non-responsive designs
         });
     }, function () {
     }, 5000);
@@ -84,7 +70,7 @@ if(publishedmode==false) {
                     complete: function() {},  //  A function that gets called after every slide animation
                     keys: true,               //  Enable keyboard (left, right) arrow shortcuts
                     dots: true,               //  Display dot navigation
-                    fluid: true              //  Support responsive design. May break non-responsive designs
+                    fluid: true               //  Support responsive design. May break non-responsive designs
                 });
             }, function () {
             }, 10000);
@@ -93,14 +79,13 @@ if(publishedmode==false) {
 }
 
 
-
 $(document).ready(function(){
     $('.bk-twitter').unslider({
         delay: false,             //  Stops slider auto sliding through tweets
         complete: function() {},  //  A function that gets called after every slide animation
         keys: true,               //  Enable keyboard (left, right) arrow shortcuts
         dots: true,               //  Display dot navigation
-        fluid: true              //  Support responsive design. May break non-responsive designs
+        fluid: true               //  Support responsive design. May break non-responsive designs
     });
 });
 
@@ -122,42 +107,7 @@ function closeEverything() {
 }
 
 
-
-
-// ---------------------------------
-// Basket Overlay
-// ---------------------------------
-
-
-/*if(publishedmode==true) {
-
-    $(document).on("click", ".ecombasket__basket-toggle", function() {
-        $( "body, html" ).toggleClass( "basket-open" );
-    });
-
-
-
-
-    $(document).on("click touchstart", ".basket-body", function(event) {
-        if( $(event.target).is(".basket-body") ) {
-            closeEverything();
-        }
-    });
-
-
-
-    $('.ecombasket__basket-body').click(function(e) {
-        if (e.target == this) {
-            closeEverything();
-        }
-    });
-}*/
-
-
-
-
 // On ESC key
-
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27) {
