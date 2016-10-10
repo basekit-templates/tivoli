@@ -1,0 +1,180 @@
+
+// -----------------------------
+//  Navigation
+// -----------------------------
+
+
+
+//  Navigation Positioning
+// --------------------------
+
+
+
+// Positions navigation to the right of the feature and vertically center to the page
+[data-widget-type="extendednavigation"] {
+    background-color: $color__container--background;
+    -webkit-box-shadow: 0px 0px 125px 0px rgba(0,0,0,0.075);
+    -moz-box-shadow: 0px 0px 125px 0px rgba(0,0,0,0.075);
+    box-shadow: 0px 0px 125px 0px rgba(0,0,0,0.075);
+    overflow-y: scroll;
+    pointer-events: all;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    padding: 100px 35px 0;
+    z-index: 100;
+    min-width: 450px;
+    max-width: 450px;
+    width: 0;
+    @include flex-display;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    @include transition(left 0.5s ease-in-out);
+    z-index: 9999;
+
+    @media #{$mobile-650px} {
+        right: -200%;
+        min-width: 85%;
+        max-width: 85%;
+        padding-top: 70px;
+        padding-left: 20px;
+    }
+}
+
+
+// When navigation is open bring into page view
+.navigation-open [data-widget-type="extendednavigation"] {
+    right: 0;
+    width: auto;
+
+
+    &:after {
+        opacity: 1;
+    }
+
+    .extendednavigation__navigation-item {
+        right: 0;
+    }
+}
+
+
+// When navigation is open add styling to header
+.navigation-open .template-header {
+    padding-left: 70px;
+}
+
+
+.extendednavigation {
+    margin: auto 0;
+    width: 100%;
+
+
+    &__navigation-item {
+        display: block;
+        right: -450px;
+        @include transition(left 0.5s ease);
+        will-transform: transition;
+
+        &:first-child {
+            transition-delay: 0.15s;
+        }
+
+        &:nth-child(n+1) {
+            transition-delay: 0.25s;
+        }
+
+        &:nth-child(n+2) {
+            transition-delay: 0.35s;
+        }
+
+        &:nth-child(n+3) {
+            transition-delay: 0.45s;
+        }
+
+        &:nth-child(n+4) {
+            transition-delay: 0.65s;
+        }
+
+        &:nth-child(n+5) {
+            transition-delay: 0.75s;
+        }
+
+        &:nth-child(n+6) {
+            transition-delay: 0.85s;
+        }
+
+        &:nth-child(n+7) {
+            transition-delay: 0.95s;
+        }
+
+        &:nth-child(n+8) {
+            transition-delay: 1.05s;
+        }
+
+        &:nth-child(n+9) {
+            transition-delay: 1.15s;
+        }
+
+        &:nth-child(n+10) {
+            transition-delay: 1.25s;
+        }
+
+        &:nth-child(n+11) {
+            transition-delay: 1.35s;
+        }
+
+        &:nth-child(n+12) {
+            transition-delay: 1.45s;
+        }
+
+        &:nth-child(n+13) {
+            transition-delay: 1.55s;
+        }
+
+        &:nth-child(n+14) {
+            transition-delay: 1.65s;
+        }
+
+        &:nth-child(n+15) {
+            transition-delay: 1.75s;
+        }
+
+
+        &.selected .item-name {
+            color: $color__navigation--text--selected;
+        }
+
+
+        .item-name {
+            color: $color__navigation--text;
+            @include transition(all .5s ease-in-out);
+
+            @media #{$tablet-860px} {
+                font-size: bkscale($font__navigation--font-size, 0.9);
+                line-height: bkscale($font__navigation--line-height, 0.8);
+            }
+
+            @media #{$tablet-860px} {
+                font-size: bkscale($font__navigation--font-size, 0.75);
+                line-height: bkscale($font__navigation--line-height, 0.65);
+            }
+        }
+
+
+        .item-name:hover {
+            color: $color__navigation--text--selected;
+        }
+    }
+}
+
+
+.navigation-list--children .item-name {
+    color: darken($color__navigation--text, 10%);
+}
+
+
+.navigation-toggle {
+    display: none;
+    visibility: hidden;
+}

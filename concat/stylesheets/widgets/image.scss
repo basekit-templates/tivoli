@@ -1,0 +1,71 @@
+
+// ------------------------------------
+//  Image Widget
+// ------------------------------------
+
+
+.imagewidget {
+    font-size: 0;
+    line-height: 0;
+
+
+    // Image Figure
+    &__figure {
+        display: inline;
+        margin: 0;
+        position: relative;
+    }
+
+
+    // Image link
+    &__image-link {
+        display: inline;
+        overflow: visible;
+    }
+
+
+    &__image {
+        -webkit-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.05);
+        -moz-box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.05);
+        box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.05);
+    }
+
+
+    // Image title and description
+    &__caption {
+        padding: 20px 0;
+    }
+
+
+    // If image is aligned right move caption box to match
+    &.widget-align-right .imagewidget__caption {
+        left: initial;
+        right: 0;
+    }
+
+
+    // Stop text being center aligned when widget alignment is changed
+    &.widget-align-center .imagewidget__caption {
+        text-align: left;
+    }
+
+
+    // Image title styles
+    &__image-title {
+        color: $color__image-title--text;
+        font-family: $font__feature-headline--font-family;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 26px;
+        margin-bottom: 8px;
+    }
+
+
+    // Image description styles
+    &__image-description {
+        color: $color__image-description--text;
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+
