@@ -17,16 +17,10 @@
     }
 
 
-    &__post-content {
-        background-color: $color__container--background;
-        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
-        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
-        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+    &__post-image + &__post-content {
         display: inline-block;
         margin: -150px 35px 0;
         max-width: 680px;
-        padding: 35px 50px;
-        position: relative;
         z-index: 2;
 
 
@@ -38,15 +32,23 @@
 
 
         @media #{$tablet-860px} {
-            margin-top: -40px;
+            margin: -40px 5% 0;
             max-width: 100%;
+            width: 90%;
         }
+    }
 
 
-        @media #{$mobile-650px} {
-            margin-left: 20px;
-            margin-right: 20px;
-        }
+    &__post-content {
+        background-color: $color__container--background;
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        padding: 35px 50px;
+        position: relative;
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
     }
 
 
@@ -105,7 +107,7 @@
     }
 
 
-    &__post-footer {
+    &__post-image + &__post-content + &__post-footer {
         position: absolute;
         top: 520px;
         right: 0;
@@ -117,15 +119,25 @@
 
 
         @media #{$tablet-860px} {
-            padding: 15px 0 0 35px;
+            padding-left: 35px;
             position: relative;
             top: initial;
         }
 
 
         @media #{$mobile-650px} {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 0;
+        }
+    }
+
+
+    &__post-footer {
+        padding-top: 15px;
+        text-align: right;
+
+
+        @media #{$mobile-650px} {
+            padding: 15px 0 0;
             text-align: center;
         }
     }

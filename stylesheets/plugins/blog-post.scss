@@ -7,6 +7,7 @@
 .blogpost {
 
 
+    // Blogpost image height
     &__image-link {
         background-size: cover;
         background-position: center;
@@ -24,36 +25,25 @@
     }
 
 
+    // Hide blogpost inline image
     &__image {
         display: none;
         visibility: hidden;
     }
 
 
-    &__post-content {
-        background-color: $color__container--background;
-        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
-        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
-        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+    // If an image is included apply styling to content
+    &__post-image + &__post-content {
         display: inline-block;
         margin: -60px 35px 0;
-        max-width: 800px;
-        padding: 40px 50px;
-        position: relative;
-        width: 100%;
+        max-width: 820px;
+        max-width: 75%;
         z-index: 2;
-
-
-        @media only screen and (max-width: 1180px) {
-            max-width: 680px;
-        }
 
 
         @media #{$desktop-1024px} {
             left: initial;
             margin-top: -40px;
-            max-width: initial;
-            padding: 30px 40px;
             top: initial;
             width: initial;
         }
@@ -66,12 +56,37 @@
 
 
         @media #{$mobile-650px} {
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 
 
+    // Content styling for blogposts with no image
+    &__post-content {
+        background-color: $color__container--background;
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
+        padding: 40px 50px;
+        position: relative;
+        margin: 0;
+        max-width: 75%;
+        width: 100%;
+
+
+        @media #{$desktop-1024px} {
+            padding: 30px 40px;
+        }
+
+
+        @media #{$tablet-860px} {
+            max-width: 100%;
+        }
+    }
+
+
+    // Blogpost heading
     &__post-title {
         color: $color__blogpostlist-title--text;
         font-family: $font__h2--font-family;
@@ -86,71 +101,100 @@
     }
 
 
-    &__post-footer {
-        @include align-items(center);
-        @include flex-display;
-        @include flex-wrap(wrap);
-        max-width: 250px;
-        padding: 0 20px;
-        position: absolute;
+    // Styling for footer if blogpost has image
+    &__post-image + &__post-content +  &__post-footer {
         top: 570px;
-        left: 850px;
+        left: 80%;
+        max-width: 20%;
         width: 100%;
 
 
-        @media only screen and (max-width: 1180px) {
-            left: 735px;
-            top: 560px;
-        }
-
-
         @media #{$desktop-1024px} {
-            @include flex-display;
-            @include justify-content(space-between);
-            margin: 0 35px;
-            max-width: 100%;
-            padding: 20px 0;
-            position: relative;
-            left: initial;
-            top: initial;
-            width: initial;
+            top: 425px;
         }
 
 
         @media #{$tablet-860px} {
-            padding: 15px 0 0;
-            position: relative;
+            max-width: 100%;
+            padding: 20px 35px;
+            position: initial;
+            top: inherit;
+            left: inherit;
         }
 
 
         @media #{$mobile-650px} {
-            text-align: center;
+            padding: 20px 0;
         }
 
 
+        // Blogpost date
         .timestamp {
             color: $color__p--text;
             font-family: $font__h2--font-family;
             @include flex-order(3);
             margin: 25px 0 0;
             position: absolute;
-            right: 0;
+            right: 25px;
             top: -80px;
 
 
-            @media #{$desktop-1024px} {
+            @media #{$tablet-860px} {
                 margin-top: 0;
+                max-width: 100%;
+                position: relative;
+                right: inherit;
+                top: inherit;
             }
 
 
             @media #{$mobile-650px} {
-                margin-top: 20px;
-                width: 100%;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                text-align: right;
             }
         }
     }
 
 
+    // Styling for footer if blogpost has no image
+    &__post-footer {
+        @include align-items(center);
+        @include flex-display;
+        @include flex-wrap(wrap);
+        max-width: 25%;
+        padding: 0 35px;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+
+        @media #{$tablet-860px} {
+            @include justify-content(space-between);
+            max-width: 100%;
+            padding: 20px 0;
+            position: relative;
+        }
+
+
+        @media #{$mobile-650px} {
+            display: block;
+            position: initial;
+        }
+
+
+        // Blogpost date
+        .timestamp {
+            @media #{$mobile-650px} {
+                margin-bottom: 15px;
+                text-align: center;
+            }
+        }
+    }
+
+
+    // Blogpost category and tag data
     &__post-attributes {
         @include flex-display;
         @include flex-wrap(wrap);
@@ -159,7 +203,7 @@
 
         @media #{$mobile-650px} {
             @include justify-content(center);
-            width:100%;
+            width: 100%;
         }
 
 
@@ -179,7 +223,7 @@
             width: 100%;
 
 
-            @media #{$desktop-1024px} {
+            @media #{$tablet-860px} {
                 @include flex-display;
                 @include align-items(center);
                 width: initial;
@@ -194,7 +238,7 @@
         }
 
 
-        // Title styles
+        // Category and tags title styling
         .category-title,
         .tags-title {
             color: lighten($color__body--background, 100%);
@@ -208,6 +252,11 @@
             @media #{$desktop-1024px} {
                 margin-right: 10px;
             }
+
+
+            @media #{$mobile-650px} {
+                line-height: 1;
+            }
         }
 
 
@@ -219,6 +268,7 @@
     }
 
 
+    // Social sharing links
     &__sharing-links {
         padding: 0;
         position: relative;
