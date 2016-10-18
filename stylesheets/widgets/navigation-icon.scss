@@ -5,8 +5,8 @@
 
 
 .navigation-open .navigation-icon--container {
-    position: fixed;
-    right: 35px;
+    position: absolute;
+    right: 0;
 
 
     // Icon colour when navigation is open
@@ -16,7 +16,7 @@
     input:checked + label:after,
     label .navigation-icon:before,
     label .navigation-icon:after {
-        background: #202020;
+        background: #fafafa;
     }
 }
 

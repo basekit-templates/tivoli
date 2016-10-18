@@ -50,7 +50,7 @@
 
 
         @media #{$tablet-860px} {
-            margin-top: -30px;
+            margin: -30px 20px 0;
             max-width: 100%;
         }
 
@@ -83,6 +83,21 @@
         @media #{$tablet-860px} {
             max-width: 100%;
         }
+
+
+        img {
+            padding: 25px 0 10px;
+        }
+
+
+        blockquote {
+            font-size: $font__p--font-size;
+            line-height: $font__p--line-height;
+            margin: 25px auto 40px;
+            max-width: 580px;
+            padding: 30px 0;
+            text-align: left;
+        }
     }
 
 
@@ -92,6 +107,7 @@
         font-family: $font__h2--font-family;
         font-size: $font__h2--font-size;
         line-height: $font__h2--line-height;
+        padding-bottom: 20px;
 
 
         @media #{$mobile-650px} {
@@ -103,9 +119,9 @@
 
     // Styling for footer if blogpost has image
     &__post-image + &__post-content +  &__post-footer {
-        top: 570px;
-        left: 80%;
-        max-width: 20%;
+        top: 580px;
+        left: 78%;
+        max-width: 22%;
         width: 100%;
 
 
@@ -116,7 +132,7 @@
 
         @media #{$tablet-860px} {
             max-width: 100%;
-            padding: 20px 35px;
+            padding: 20px;
             position: initial;
             top: inherit;
             left: inherit;
@@ -130,28 +146,27 @@
 
         // Blogpost date
         .timestamp {
-            color: $color__p--text;
+            background-color: fade-out($color__body--background, 0.3);
+            color: lighten($color__body--background, 100%);
             font-family: $font__h2--font-family;
+            font-size: 15px;
             @include flex-order(3);
-            margin: 25px 0 0;
+            margin: 0;
+            padding: 10px 20px;
             position: absolute;
-            right: 25px;
-            top: -80px;
+            right: -1px;
+            top: -65px;
 
 
-            @media #{$tablet-860px} {
-                margin-top: 0;
-                max-width: 100%;
-                position: relative;
-                right: inherit;
-                top: inherit;
+            @media #{$desktop-1024px} {
+                top: -60px;
             }
 
 
-            @media #{$mobile-650px} {
+            @media #{$tablet-860px} {
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 0;
+                right: 0;
                 text-align: right;
             }
         }
@@ -186,6 +201,10 @@
 
         // Blogpost date
         .timestamp {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+
+
             @media #{$mobile-650px} {
                 margin-bottom: 15px;
                 text-align: center;
@@ -209,7 +228,7 @@
 
         // Add spacing between category and tags
         div + div {
-            margin-top: 10px;
+            margin-top: 18px;
 
 
             @media #{$desktop-1024px} {
@@ -246,6 +265,7 @@
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 1px;
+            line-height: 26px;
             text-transform: uppercase;
 
 
@@ -257,6 +277,11 @@
             @media #{$mobile-650px} {
                 line-height: 1;
             }
+
+
+            &:after {
+                content: ":";
+            }
         }
 
 
@@ -264,6 +289,23 @@
         .tag-text {
             color: $color__p--text;
             font-family: $font__h2--font-family;
+            font-size: 16px;
+
+
+            @media #{$tablet-860px} {
+                font-size: 17px;
+            }
+        }
+
+
+        .tag-item:after {
+            content: ",";
+        }
+
+
+        .tag-item:last-child:after {
+            display: none;
+            visibility: hidden;
         }
     }
 
@@ -274,8 +316,21 @@
         position: relative;
 
 
+        // Social icon spacing
         .network-item {
-            margin: 10px 16px 0 0;
+            margin: 18px 16px 0 0;
+
+
+            @media #{$tablet-860px} {
+                margin: 5px 16px 0 0;
+            }
+
+
+            &:last-child {
+                @media #{$tablet-860px} {
+                    margin-right: 0;
+                }
+            }
         }
 
 

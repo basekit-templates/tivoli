@@ -174,10 +174,10 @@
             "font__navigation--font-weight": "400",
             "font__navigation--line-height": "36px",
             "font__navigation--letter-spacing": "1px",
-            "color__navigation--background": "#ffffff",
+            "color__navigation--background": "rgba(40,40,40, 0.9)",
             "color__navigation--text": "#737373",
             "color__navigation--text--hover": "#1e1e1e",
-            "color__navigation--text--selected": "#1e1e1e"
+            "color__navigation--text--selected": "#ffffff"
         },
         "form": {
             "color__form-legend--text": "#ffffff",

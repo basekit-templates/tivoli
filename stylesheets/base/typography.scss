@@ -265,7 +265,7 @@ blockquote {
     max-width: 800px;
     padding: 40px 25px;
     position: relative;
-    text-align: center!important;
+    text-align: center;
 
     @media #{$mobile-650px} {
         font-size: $font__h4--font-size * 0.85;
