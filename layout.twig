@@ -35,6 +35,22 @@
         <script src="{{ asset('scripts/twitter-slider.js')}}"></script>
         <script src="{{ asset('scripts/custom.js')}}"></script>
 
+        <!--Scripts-->
+        <script src="{{ asset('scripts/imagesloaded.js')}}"></script>
+        <script src="{{ asset('scripts/masonry.min.js')}}"></script>
+
+
+        <!-- Initialize Masonry Gallery-->
+        <script>
+            var elements = document.getElementsByClassName('gallery-list');
+            var container = document.querySelector('.gallery-list');
+            imagesLoaded( container, function() {
+                var msnry = new Masonry( container, {
+                    itemSelector: '.gallery-item'
+                });
+            });
+        </script>
+
 
         <!-- Page Specific Scripts -->
         {% block scripts %}

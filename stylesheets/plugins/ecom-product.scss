@@ -20,8 +20,15 @@
 
 
         .image-link {
+            background-color: lighten($color__body--background, 10%);
             height: auto;
             line-height: normal;
+            text-align: left;
+        }
+
+        .image {
+            min-height: 200px;
+            max-height: 500px;
         }
     }
 
@@ -60,7 +67,7 @@
         box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.08);
         display: inline-block;
         margin: -60px 40px 0;
-        max-width: 768px;
+        max-width: 680px;
         padding: 40px 50px;
         position: relative;
         width: 100%;
@@ -160,8 +167,8 @@
 
     &__product-attributes {
         position: absolute;
-        left: 800px;
-        top: 40px;
+        left: 720px;
+        top: 45px;
         width: 200px;
     }
 

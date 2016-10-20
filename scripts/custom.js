@@ -49,7 +49,9 @@ $(document).ready(function(){
             delay: false,             //  Stops slider auto sliding through tweets
             complete: function() {},  //  A function that gets called after every slide animation
             keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-            dots: true,               //  Display dot navigation
+            animation: 'fade',
+            arrows: true,
+            dots: false,               //  Display dot navigation
             fluid: true               //  Support responsive design. May break non-responsive designs
         });
     }, function () {
@@ -69,7 +71,9 @@ if(publishedmode==false) {
                     delay: false,             //  Stops slider auto sliding through tweets
                     complete: function() {},  //  A function that gets called after every slide animation
                     keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-                    dots: true,               //  Display dot navigation
+                    animation: 'fade',
+                    arrows: true,
+                    dots: false,               //  Display dot navigation
                     fluid: true               //  Support responsive design. May break non-responsive designs
                 });
             }, function () {
@@ -84,7 +88,9 @@ $(document).ready(function(){
         delay: false,             //  Stops slider auto sliding through tweets
         complete: function() {},  //  A function that gets called after every slide animation
         keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-        dots: true,               //  Display dot navigation
+        arrows: true,
+        animation: 'fade',
+        dots: false,               //  Display dot navigation
         fluid: true               //  Support responsive design. May break non-responsive designs
     });
 });

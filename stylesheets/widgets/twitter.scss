@@ -52,6 +52,7 @@
         overflow: visible!important;
         padding: 0 45px 35px;
         position: relative;
+        right: -1px; // Fixes pixel overlap of next slide
         text-align: center;
     }
 
@@ -113,10 +114,13 @@
 }
 
 
-.dot {
+.arrows span {
     background-color: lighten($color__body--background, 15%);
-    text-indent: -9999px;
-    overflow: hidden;
+    cursor: pointer;
+    @include flex-display();
+    @include align-items(center);
+    @include justify-content(center);
+    font-size: 24px;
     position: absolute;
     top: 25%;
     bottom: 20%;
@@ -124,12 +128,43 @@
     width: 45px;
     z-index: 2;
 
-    &:first-child {
-        left: 0;
+
+    &:after {
+        border-left: 2px solid lighten($color__body--background, 35%);
+        border-top: 2px solid lighten($color__body--background, 35%);
+        content: "";
+        height: 12px;
+        width: 12px;
+        @include transition(border 0.5s ease);
     }
 
-    &:last-child {
+
+    &:hover:after {
+        border-color: lighten($color__body--background, 100%);
+    }
+
+
+    &.prev {
+        left: 0;
+
+        &:after {
+            margin: 0 0 0 5px;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+
+
+    &.next {
         right: 0;
+
+        &:after {
+            margin: 0 0 0 -5px;
+            -webkit-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
     }
 }
 

@@ -4,6 +4,11 @@
 // ------------------------------------
 
 
+[data-name="image"] {
+    margin-bottom: 65px;
+}
+
+
 .imagewidget {
     font-size: 0;
     line-height: 0;
@@ -19,7 +24,7 @@
 
     // Image link
     &__image-link {
-        display: inline;
+        display: block;
         overflow: visible;
     }
 
@@ -33,7 +38,23 @@
 
     // Image title and description
     &__caption {
-        padding: 20px 0;
+        background-color: $color__container--background;
+        -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.05);
+        display: inline-block;
+        margin-top: -35px;
+        max-width: 680px;
+        padding: 20px 25px;
+        text-align: left;
+        width: auto;
+        z-index: 2;
+
+
+        @media #{$tablet-860px} {
+            display: none;
+            visibility: hidden;
+        }
     }
 
 
@@ -65,7 +86,7 @@
     &__image-description {
         color: $color__image-description--text;
         font-size: 16px;
-        line-height: 21px;
+        line-height: 24px;
     }
 }
 

@@ -98,7 +98,7 @@
             }
 
             if(this.opts.arrows) {
-                this.el.parent().append('<p class="arrows"><span class="prev">â†</span><span class="next">â†’</span></p>')
+                this.el.parent().append('<p class="arrows"><span class="prev"></span><span class="next"></span></p>')
                     .find('.arrows span').click(function() {
                         $.isFunction(_[this.className]) && _[this.className]();
                     });
